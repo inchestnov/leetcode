@@ -1,4 +1,4 @@
-package test;
+package inchestnov.util;
 
 import lombok.experimental.UtilityClass;
 
@@ -7,7 +7,7 @@ import java.util.Objects;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @UtilityClass
-public final class ArrayAssert {
+public final class ArrayAssertions {
 
     /**
      * Assert that <code>expected[i] == actual[i]</code> for all i from 0 to expected.length.
