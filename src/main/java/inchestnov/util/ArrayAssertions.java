@@ -15,7 +15,6 @@ public final class ArrayAssertions {
             assertNull(actual);
             return;
         }
-
         assertNotNull(expected);
         assertNotNull(actual);
 
