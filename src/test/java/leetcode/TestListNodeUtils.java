@@ -10,6 +10,11 @@ import static org.junit.jupiter.api.Assertions.*;
 class TestListNodeUtils {
 
     @Test
+    void test_fail() {
+        fail();
+    }
+
+    @Test
     void testOfValues_exceptionThrown() {
         Assertions.assertThatThrownBy(() -> ListNodeUtils.ofValues((List) null))
             .isInstanceOf(NullPointerException.class)
@@ -26,7 +31,7 @@ class TestListNodeUtils {
         ListNode listNode = ListNodeUtils.ofValues(1);
         assertNotNull(listNode);
         assertEquals(1, listNode.val);
-        assertNotNull(listNode.next);
+        assertNull(listNode.next);
     }
 
     @Test
