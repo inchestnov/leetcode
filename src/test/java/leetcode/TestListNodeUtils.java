@@ -34,7 +34,7 @@ class TestListNodeUtils {
         int[] nums = {1, 2, 3, 4, 5};
         ListNode head = ListNodeUtils.ofValues(nums);
 
-        ListUtilsAssertions.assertEquals(nums, head);
+        ListNodeAssertions.assertEquals(nums, head);
     }
 
 }
