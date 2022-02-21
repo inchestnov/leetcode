@@ -26,7 +26,7 @@ class TestListNodeUtils {
         ListNode listNode = ListNodeUtils.ofValues(1);
         assertNotNull(listNode);
         assertEquals(1, listNode.val);
-        assertNull(listNode.next);
+        assertNotNull(listNode.next);
     }
 
     @Test
