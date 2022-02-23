@@ -1,5 +1,6 @@
-package leetcode;
+package inchestnov.util;
 
+import leetcode.ListNode;
 import lombok.experimental.UtilityClass;
 
 import java.util.*;

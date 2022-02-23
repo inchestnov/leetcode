@@ -1,10 +1,12 @@
 package leetcode;
 
+import inchestnov.util.ListNodeUtils;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
+import static asserts.ListNodeAssert.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class TestListNodeUtils {
@@ -34,7 +36,7 @@ class TestListNodeUtils {
         int[] nums = {1, 2, 3, 4, 5};
         ListNode head = ListNodeUtils.ofValues(nums);
 
-        ListNodeAssertions.assertEquals(nums, head);
+        assertThat(head).isEqualsTo(nums);
     }
 
 }
