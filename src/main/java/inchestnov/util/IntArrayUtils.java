@@ -18,4 +18,9 @@ public final class IntArrayUtils {
         return nums;
     }
 
+    public int[][] intArrayOf(int[] ... nums) {
+        Objects.requireNonNull(nums, "nums must not be null");
+        return nums;
+    }
+
 }
