@@ -9,7 +9,7 @@ class TestIntArrayUtils {
 
     @Test
     void testIntArrayOf_nullParameter() {
-        Assertions.assertThatThrownBy(() -> IntArrayUtils.intArrayOf(null))
+        Assertions.assertThatThrownBy(() -> IntArrayUtils.intArrayOf((int[]) null))
             .isInstanceOf(NullPointerException.class)
             .hasMessageContaining("must not be null");
     }
