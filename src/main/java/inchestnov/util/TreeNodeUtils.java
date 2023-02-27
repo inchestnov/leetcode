@@ -27,29 +27,25 @@ public class TreeNodeUtils {
         }
 
         TreeNode root = new TreeNode(values.get(0));
-        appendNextTwoElementsRecursive(root, values, 1);
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        int index = 1;
+        while (!queue.isEmpty() && index < values.size()) {
+            TreeNode next = queue.poll();
+
+            Optional.ofNullable(values.get(index++)).ifPresent(left -> {
+                next.left = new TreeNode(left);
+                queue.add(next.left);
+            });
+
+            Optional.ofNullable(values.get(index++)).ifPresent(right -> {
+                next.right = new TreeNode(right);
+                queue.add(next.right);
+            });
+        }
+
+
         return root;
-    }
-
-    private void appendNextTwoElementsRecursive(TreeNode root, List<Integer> source, int index) {
-        if (root == null || source.size() <= index) {
-            return;
-        }
-
-        Integer leftValue = source.get(index);
-        if (leftValue != null) {
-            TreeNode leftChild = new TreeNode(leftValue);
-            root.left = leftChild;
-        }
-
-        Integer rightValue = source.get(index + 1);
-        if (rightValue != null) {
-            TreeNode rightChild = new TreeNode(rightValue);
-            root.right = rightChild;
-        }
-
-        appendNextTwoElementsRecursive(root.left, source, index + 2);
-        appendNextTwoElementsRecursive(root.right, source, index + 4);
     }
 
 }
