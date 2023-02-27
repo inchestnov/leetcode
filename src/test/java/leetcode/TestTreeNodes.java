@@ -1,7 +1,7 @@
 package leetcode;
 
-import inchestnov.util.ListNodeUtils;
-import inchestnov.util.TreeNodeUtils;
+import inchestnov.util.ListNodes;
+import inchestnov.util.TreeNodes;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -11,23 +11,23 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.junit.jupiter.api.Assertions.*;
 
-class TestTreeNodeUtils {
+class TestTreeNodes {
 
     @Test
     void testOfValues_exceptionThrown() {
-        assertThatThrownBy(() -> ListNodeUtils.ofValues((List) null))
+        assertThatThrownBy(() -> ListNodes.ofValues((List) null))
                 .isInstanceOf(NullPointerException.class)
                 .hasMessageContaining("must not be null");
     }
 
     @Test
     void testOfValues_emptyList() {
-        assertNull(TreeNodeUtils.ofValues(List.of()));
+        assertNull(TreeNodes.ofValues(List.of()));
     }
 
     @Test
     void testOfValues_singleItem() {
-        TreeNode treeNode = TreeNodeUtils.ofValues(1);
+        TreeNode treeNode = TreeNodes.ofValues(1);
         assertNotNull(treeNode);
         assertEquals(1, treeNode.val);
         assertNull(treeNode.left);
@@ -36,7 +36,7 @@ class TestTreeNodeUtils {
 
     @Test
     void testOfValues_leftSubTree() {
-        TreeNode root = TreeNodeUtils.ofValues(Arrays.asList(1, 2, null, 3, null, 4, null, 5, null));
+        TreeNode root = TreeNodes.ofValues(Arrays.asList(1, 2, null, 3, null, 4, null, 5, null));
         assertThat(root.val).isEqualTo(1);
 
         assertThat(root.left.val).isEqualTo(2);
@@ -58,7 +58,7 @@ class TestTreeNodeUtils {
     @Test
     void testOfValues_fromArray() {
         Integer[] nums = {-10, 9, 20, null, null, 15, 7};
-        TreeNode root = TreeNodeUtils.ofValues(nums);
+        TreeNode root = TreeNodes.ofValues(nums);
         assertThat(root.val).isEqualTo(-10);
 
         assertThat(root.left.val).isEqualTo(9);
@@ -78,7 +78,7 @@ class TestTreeNodeUtils {
 
     @Test
     void testOfValues_fromList() {
-        TreeNode root = TreeNodeUtils.ofValues(Arrays.asList(
+        TreeNode root = TreeNodes.ofValues(Arrays.asList(
                 1, 4, 4, null, 2, 2, null, 1, null, 6, 8, null, null, null, null, 1, 3
         ));
 

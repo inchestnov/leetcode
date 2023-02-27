@@ -9,7 +9,7 @@ import java.util.*;
  * Utility-class for easy create {@link ListNode}
  */
 @UtilityClass
-public class ListNodeUtils {
+public class ListNodes {
 
     public ListNode ofValues(int... values) {
         Objects.requireNonNull(values, "values must not be null");

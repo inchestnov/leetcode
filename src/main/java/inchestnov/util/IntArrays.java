@@ -8,7 +8,7 @@ import java.util.Objects;
  * Utility-class for easy create array of integers.
  */
 @UtilityClass
-public final class IntArrayUtils {
+public final class IntArrays {
 
     /**
      * Return arrays of integers created from varargs.

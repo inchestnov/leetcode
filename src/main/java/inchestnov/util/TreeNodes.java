@@ -9,7 +9,7 @@ import java.util.*;
  * Utility-class for easy create {@link TreeNode}
  */
 @UtilityClass
-public class TreeNodeUtils {
+public class TreeNodes {
 
     public TreeNode ofValues(Integer... values) {
         Objects.requireNonNull(values, "values must not be null");
